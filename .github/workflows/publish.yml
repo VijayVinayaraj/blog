@@ -3,9 +3,11 @@ name: Publish to GitHub Pages
 on:
   push:
     branches:
-      - main 
+      - main
+      
 permissions:
-  contents:write
+  contents: write
+  
 jobs:
   publish:
     runs-on: ubuntu-latest
