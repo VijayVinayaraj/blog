@@ -1,5 +1,6 @@
 #+TITLE: Interfacing SSD1306 128*64 Led Display With ESP32 in EspIDF
 #+AUTHOR: Vijay Vinayaraj
+
 * Introduction
 
 They guys just want to show you how to interface with a SSD1306 led display with esp32 in ESPIDF. The official documenation might overwhelm the average programmer.
@@ -16,7 +17,7 @@ I won't be explaining how to I2C work there are great articles on that which can
 #+CAPTION: block-diagram of SSD1306 Initialization
 #+NAME: block-diagram
 #+ATTR_HTML: :width 400px
-file:./ssd1306-block-diagram.png
+[[file:./ssd1306-block-diagram.png]]
 
 This is the block diagram shown on the last page of the datasheet. We have to intialize ssd1306 according to the block diagram.
 For making it easy for you I have declared all the registers of ssd1306.
