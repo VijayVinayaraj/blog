@@ -1,1 +1,1 @@
-emacs -Q --script build.el 
+emacs -Q --script 
