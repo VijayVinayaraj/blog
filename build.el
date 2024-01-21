@@ -28,7 +28,6 @@
 	      :with-author nil           ;; Don't include author name
              :with-creator nil
              :with-toc nil
-             :with-footnotes nil;; Include a table of contents
              :section-numbers nil       ;; Don't include section numbers
              :time-stamp-file nil
 	       )))
