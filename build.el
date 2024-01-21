@@ -16,7 +16,7 @@
       
       org-html-head-include-scripts nil       ;; Use our own scripts
       org-html-head-include-default-style nil ;; Use our own styles
-      org-html-head "<link rel=\"stylesheet\" href=\"style.css\" />")
+      org-html-head "<link rel=\"stylesheet\" href=\"./style.css\"/>")
 (setq org-publish-project-alist
       (list
        (list "my-org-site"
@@ -25,8 +25,9 @@
              :publishing-directory "./public"
              :publishing-function 'org-html-publish-to-html
 	      :with-author nil           ;; Don't include author name
-             :with-creator t            ;; Include Emacs and Org versions in footer
-             :with-toc t                ;; Include a table of contents
+             :with-creator nil
+             :with-toc nil
+             :with-footnotes nil;; Include a table of contents
              :section-numbers nil       ;; Don't include section numbers
              :time-stamp-file nil
 	       )))

@@ -1,21 +1,23 @@
-#+ TITLE : Interfacing SSD1306 128*64 Led Display With ESP32 in EspIDF
-#+ AUTHOR : Vijay Vinayaraj
-
+#+TITLE: Interfacing SSD1306 128*64 Led Display With ESP32 in EspIDF
+#+AUTHOR: Vijay Vinayaraj
+#+OPTIONS: toc:nil
 * Introduction
 
 They guys just want to show you how to interface with a SSD1306 led display with esp32 in ESPIDF. The official documenation might overwhelm the average programmer.
-I have used the oled display with the [[https://github.com/adafruit/Adafruit_SSD1306][Adafruit_SSD1306]] library. I want to try out ESPIDF and had a oled display lying around. Lets get to it without boring you.
+I have used the oled display with the [[https://github.com/adafruit/Adafruit_SSD1306][Adafruit SSD1306]] library. I want to try out ESPIDF and had a oled display lying around. Lets get to it without boring you.
 I have used the minimum possible code you interface with ssd1306 if you want to go extreme I have given a great repo for you go through.
 
 
 I will link the datasheet of [[https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf][SSD1306]] here.
-There is github repo that has detailed code for interfacing with oled. I will link it [[https://github.com/nopnop2002/esp-idf-ssd1306/blob/master/TextDemo/main/main.c][here]].
-You can find the documentation of I2C for espidf for [[https://docs.espressif.com/projects/esp-idf/en/v5.1.2/esp32/api-reference/peripherals/i2c.html?highlight=i2c][here]]. 
+There is github repo that has detailed code for interfacing with oled. I will link it [[https://github.com/nopnop2002/esp-idf-ssd1306/blob/master/TextDemo/main/main.c][here]]. 
 I am using ESPIDF v5. I have setup the project with platformio and vscode.
 I won't be explaining how to I2C work there are great articles on that which can you be found by a google search.
 
 * Intialization
-[[./ssd1306-block-diagram.png][block-diagram]]
+#+CAPTION: block-diagram of SSD1306 Initialization
+#+NAME: block-diagram
+#+ATTR_HTML: :width 400px
+file:./ssd1306-block-diagram.png
 
 This is the block diagram shown on the last page of the datasheet. We have to intialize ssd1306 according to the block diagram.
 For making it easy for you I have declared all the registers of ssd1306.
@@ -241,4 +243,3 @@ esp_err_t espRc;
 * Conclusion
 
 There is only minimum code for getting up and running with oled display. For displaying Images you can refer the github repo.
-You can find the documentation of function used from espIDF official [[https://docs.espressif.com/projects/esp-idf/en/v5.1.2/esp32/api-reference/peripherals/i2c.html?highlight=i2c][documenation]].

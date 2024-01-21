@@ -1,3 +1,3 @@
-** this is simple org site
+** Index
 
-this is beautiful 
+[[./ssd1306.org][Intialize SSD1306 with ESPIDF]]
