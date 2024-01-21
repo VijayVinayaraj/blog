@@ -1,5 +1,4 @@
-#+TITLE: Interfacing SSD1306 128*64 Led Display With ESP32 in EspIDF
-#+AUTHOR: Vijay Vinayaraj
+#+title: Interfacing SSD1306 128*64 Led Display With ESP32 in EspIDF
 
 * Introduction
 
@@ -14,12 +13,7 @@ I am using ESPIDF v5. I have setup the project with platformio and vscode.
 I won't be explaining how to I2C work there are great articles on that which can you be found by a google search.
 
 * Intialization
-#+CAPTION: block-diagram of SSD1306 Initialization
-#+NAME: block-diagram
-#+ATTR_HTML: :width 400px
-[[file:./ssd1306-block-diagram.png]]
-
-This is the block diagram shown on the last page of the datasheet. We have to intialize ssd1306 according to the block diagram.
+There is the block diagram shown on the last page of the datasheet. We have to intialize ssd1306 according to the block diagram.
 For making it easy for you I have declared all the registers of ssd1306.
 #+begin_src c
 #define OLED_I2C_ADDRESS   0x3C

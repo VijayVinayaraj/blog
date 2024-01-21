@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      
+
 permissions:
   contents: write
   
@@ -14,12 +14,6 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
-
-      - name: Install Emacs
-        run: sudo apt install emacs-nox --yes
-
-      - name: Build the site
-        run: ./buildScript.sh
 
       - name: Publish generated content to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
