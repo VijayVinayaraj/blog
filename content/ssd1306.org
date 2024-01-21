@@ -1,6 +1,5 @@
 #+TITLE: Interfacing SSD1306 128*64 Led Display With ESP32 in EspIDF
 #+AUTHOR: Vijay Vinayaraj
-#+OPTIONS: toc:nil
 * Introduction
 
 They guys just want to show you how to interface with a SSD1306 led display with esp32 in ESPIDF. The official documenation might overwhelm the average programmer.
