@@ -1,3 +1,4 @@
-** Index
+#+title: Index
 
-[[./ssd1306.org][Intialize SSD1306 with ESPIDF]]
+** [[./ssd1306.org][Intialize SSD1306 with ESPIDF]]
+** [[file:custom-component-esp.org][Create custom component in ESPIDF]]

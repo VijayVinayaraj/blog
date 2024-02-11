@@ -2,7 +2,7 @@
 
 * Introduction
 
-They guys just want to show you how to interface with a SSD1306 led display with esp32 in ESPIDF. The official documenation might overwhelm the average programmer.
+Hey guys just want to show you how to interface with a SSD1306 led display with esp32 in ESPIDF. The official documenation might overwhelm the average programmer.
 I have used the oled display with the [[https://github.com/adafruit/Adafruit_SSD1306][Adafruit SSD1306]] library. I want to try out ESPIDF and had a oled display lying around. Lets get to it without boring you.
 I have used the minimum possible code you interface with ssd1306 if you want to go extreme I have given a great repo for you go through.
 
@@ -13,6 +13,10 @@ I am using ESPIDF v5. I have setup the project with platformio and vscode.
 I won't be explaining how to I2C work there are great articles on that which can you be found by a google search.
 
 * Intialization
+#+CAPTION: A black cat stalking a spider
+#+ATTR_HTML:  :width 400 :height 400
+[[file:../assets/ssd1306-block-diagram.png]]
+
 There is the block diagram shown on the last page of the datasheet. We have to intialize ssd1306 according to the block diagram.
 For making it easy for you I have declared all the registers of ssd1306.
 #+begin_src c

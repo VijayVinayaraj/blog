@@ -5,18 +5,31 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
+
   
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v4
+        
+        
+      - name: build container
+        run: docker build -t emacs .
+        shell: bash
+        
+      - name: Run container
+        run: docker run --rm -v $(pwd):/app emacs
+        shell: bash
+                
+      - name: Print public folder
+        run: ls ./public/
+        shell: bash
+        
       - name: Publish generated content to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: public
+          token: ${{ secrets.GITHUB_TOKEN }}
