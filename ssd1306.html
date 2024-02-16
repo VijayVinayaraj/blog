@@ -7,17 +7,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Interfacing SSD1306 128*64 Led Display With ESP32 in EspIDF</title>
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" href="./style.css" />
+<link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
 <div id="content" class="content">
 <h1 class="title">Interfacing SSD1306 128*64 Led Display With ESP32 in EspIDF</h1>
 
-<div id="outline-container-org590513b" class="outline-2">
-<h2 id="org590513b">Introduction</h2>
-<div class="outline-text-2" id="text-org590513b">
+<div id="outline-container-org75b773e" class="outline-2">
+<h2 id="org75b773e">Introduction</h2>
+<div class="outline-text-2" id="text-org75b773e">
 <p>
-They guys just want to show you how to interface with a SSD1306 led display with esp32 in ESPIDF. The official documenation might overwhelm the average programmer.
+Hey guys just want to show you how to interface with a SSD1306 led display with esp32 in ESPIDF. The official documenation might overwhelm the average programmer.
 I have used the oled display with the <a href="https://github.com/adafruit/Adafruit_SSD1306">Adafruit SSD1306</a> library. I want to try out ESPIDF and had a oled display lying around. Lets get to it without boring you.
 I have used the minimum possible code you interface with ssd1306 if you want to go extreme I have given a great repo for you go through.
 </p>
@@ -32,9 +32,16 @@ I won't be explaining how to I2C work there are great articles on that which can
 </div>
 </div>
 
-<div id="outline-container-org7effb0c" class="outline-2">
-<h2 id="org7effb0c">Intialization</h2>
-<div class="outline-text-2" id="text-org7effb0c">
+<div id="outline-container-org60afbe8" class="outline-2">
+<h2 id="org60afbe8">Intialization</h2>
+<div class="outline-text-2" id="text-org60afbe8">
+
+<div id="org08377c3" class="figure">
+<p><img src="../assets/ssd1306-block-diagram.png" alt="ssd1306-block-diagram.png" width="400" height="400" />
+</p>
+<p><span class="figure-number">Figure 1: </span>A black cat stalking a spider</p>
+</div>
+
 <p>
 There is the block diagram shown on the last page of the datasheet. We have to intialize ssd1306 according to the block diagram.
 For making it easy for you I have declared all the registers of ssd1306.
@@ -86,9 +93,9 @@ You can copy this registers to use in your project. These registers are taken fr
 </p>
 </div>
 
-<div id="outline-container-orgd9341e8" class="outline-3">
-<h3 id="orgd9341e8">Initializing I2C</h3>
-<div class="outline-text-3" id="text-orgd9341e8">
+<div id="outline-container-orga7f6030" class="outline-3">
+<h3 id="orga7f6030">Initializing I2C</h3>
+<div class="outline-text-3" id="text-orga7f6030">
 <div class="org-src-container">
 <pre class="src src-c"><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">i2c_master_init</span>()
 {
@@ -111,9 +118,9 @@ You can copy this registers to use in your project. These registers are taken fr
 
 
 
-<div id="outline-container-org45d68a0" class="outline-3">
-<h3 id="org45d68a0">Initializing SSD1306</h3>
-<div class="outline-text-3" id="text-org45d68a0">
+<div id="outline-container-org6daffa3" class="outline-3">
+<h3 id="org6daffa3">Initializing SSD1306</h3>
+<div class="outline-text-3" id="text-org6daffa3">
 <p>
 Init function is used to intialize all the registers according to the datasheet block diagram.
 </p>
@@ -179,9 +186,9 @@ Init function is used to intialize all the registers according to the datasheet 
 </div>
 
 
-<div id="outline-container-orge65441b" class="outline-3">
-<h3 id="orge65441b">Displaying Text</h3>
-<div class="outline-text-3" id="text-orge65441b">
+<div id="outline-container-orgd8f4ade" class="outline-3">
+<h3 id="orgd8f4ade">Displaying Text</h3>
+<div class="outline-text-3" id="text-orgd8f4ade">
 <p>
 I have used the <a href="https://github.com/nopnop2002/esp-idf-ssd1306/blob/master/components/ssd1306/font8x8_basic.h">fonts</a> from the github repo mentioned above.
 </p>
@@ -236,9 +243,9 @@ I have used the <a href="https://github.com/nopnop2002/esp-idf-ssd1306/blob/mast
 </div>
 
 
-<div id="outline-container-orga67a5c9" class="outline-3">
-<h3 id="orga67a5c9">Clear Screen</h3>
-<div class="outline-text-3" id="text-orga67a5c9">
+<div id="outline-container-orgec4e198" class="outline-3">
+<h3 id="orgec4e198">Clear Screen</h3>
+<div class="outline-text-3" id="text-orgec4e198">
 <div class="org-src-container">
 <pre class="src src-c"><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">clearScreen</span>(){
 <span style="font-weight: bold; text-decoration: underline;">esp_err_t</span> <span style="font-weight: bold; font-style: italic;">espRc</span>;
@@ -286,9 +293,9 @@ I have used the <a href="https://github.com/nopnop2002/esp-idf-ssd1306/blob/mast
 </div>
 </div>
 
-<div id="outline-container-org73cd15a" class="outline-2">
-<h2 id="org73cd15a">Conclusion</h2>
-<div class="outline-text-2" id="text-org73cd15a">
+<div id="outline-container-orge63c6de" class="outline-2">
+<h2 id="orge63c6de">Conclusion</h2>
+<div class="outline-text-2" id="text-orge63c6de">
 <p>
 There is only minimum code for getting up and running with oled display. For displaying Images you can refer the github repo.
 </p>
