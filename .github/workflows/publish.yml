@@ -4,28 +4,31 @@ on:
   push:
     branches:
       - main
-
+permissions:
+        contents: write
 
   
 jobs:
   publish:
     runs-on: ubuntu-latest
+    container:
+        image: alpine:latest
+        options: --user root
     steps:
       - name: Check out
         uses: actions/checkout@v4
         
-        
       - name: build container
-        run: docker build -t emacs .
-        shell: bash
+        run: apk add emacs-nox git
+
+      - name: print files
+        run: ls .
         
       - name: Run container
-        run: docker run --rm -v $(pwd):/app emacs
-        shell: bash
+        run: emacs -Q --script ./build.el
                 
       - name: Print public folder
-        run: ls ./public/
-        shell: bash
+        run: ls ./public/ && chmod -R +rw ./public
         
       - name: Publish generated content to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
