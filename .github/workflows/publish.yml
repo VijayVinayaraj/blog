@@ -24,7 +24,7 @@ jobs:
         shell: bash
                 
       - name: Print public folder
-        run: ls ./public/
+        run: ls ./public/ && chmod -R +rw ./public
         shell: bash
         
       - name: Publish generated content to GitHub Pages
